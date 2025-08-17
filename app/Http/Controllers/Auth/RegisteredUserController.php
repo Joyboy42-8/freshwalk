@@ -42,11 +42,9 @@ class RegisteredUserController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
-        event(new Registered($user));
-
         try {
             Activity::create([
-                "user_id" => Auth::id(),
+                "user_id" => $user->id,
                 "action" => "Nouvel Utilisateur",
                 "subject_type" => User::class,
                 "subject_id" => $user->id
