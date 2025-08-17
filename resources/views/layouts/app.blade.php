@@ -22,7 +22,7 @@
                 {{ $slot }}
             </main>
 
-            <footer class="bg-black flex justify-center md:justify-between items-center p-10 w-full">
+            <footer class="bg-black flex justify-center md:justify-between items-center p-10 text-white w-full">
                 <nav class="grow grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <!-- Liens Réseaux -->
                     <div class="flex justify-center items-center gap-5">

@@ -30,13 +30,15 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        if (Auth::user()->role === 'admin') {
+        $user = Auth::user();
+
+        if ($user->role === 'admin') {
             return redirect()->intended(route('admin.panel', absolute: false));
         }
 
         try {
             Activity::create([
-                "user_id" => Auth::id(),
+                "user_id" => $user->id,
                 "action" => "Utilisateur connecté",
                 "subject_type" => User::class,
                 "subject_id" => $user->id
