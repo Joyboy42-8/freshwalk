@@ -1,0 +1,34 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mozilla+Headline:wght@200..700&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+
+/* Scanner les vues */
+@source "../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php";
+@source "../../storage/framework/views/*.php";
+@source "../views/**/*.blade.php";
+@source "../js/**/*.js";
+
+/* Ton thème */
+@theme {
+    --font-sans: "Figtree", ui-sans-serif, system-ui, sans-serif;
+    --font-roboto: "Roboto Slab";
+    --font-source: "Mozilla_Headline", sans-serif;
+
+    --color-my-white: #F5F5F5;
+    --color-my-red:   #E63946;
+    --color-my-yellow:#FFD60A;
+    --color-my-gray:  #B3B3B3;
+}
+
+/* Plugins */
+@plugin "@tailwindcss/forms";
+
+/* Safelist */
+@source inline("bg-green-500 bg-red-500 text-white rounded-full p-2");
+
+
+body {
+    font-family: 'Mozilla_Headline';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
